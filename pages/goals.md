@@ -56,3 +56,10 @@ Let's add prometheus metrics.
 
 Admiral should be built in a way that other services can integrate with it
 easily (jenkins, github, kubectl)
+
+### Versionable
+
+A single source of config should be able to manage all clusters in a given
+armada. Even if some clusters are just different stages of the same deploy. This
+means the configuration needs to be versionable. Or Admiral needs to be able to
+reference a version when pointing to an EnvironmentType

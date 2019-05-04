@@ -1,3 +1,3 @@
 [gimmick:theme](flatly)
 
-[Home](index.md)
+[Home](index.md) [Goals](pages/goals.md)
