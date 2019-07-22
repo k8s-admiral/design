@@ -1,0 +1,8 @@
+- [Home](/)
+- [Goals](goals/)
+  - [Requirements](goals/requirements.md)
+- [Api](api/)
+- [Configuration](configuration/)
+  - [ResourceGroup](configuration/resource-group.md)
+- Design Decisions
+  - [Language](/design-decisions/language.md)
