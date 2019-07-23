@@ -20,9 +20,5 @@ installed with npm (`npm i -g prettier`) and
 
 ## Submitting Changes
 
-If your change is a spelling/grammar mistake. Feel free to simply create a pull
-request. Otherwise submit an issue using one of the issue templates and start a
-discussion.
-
-Pull request discussions should be centered around the code change itself, and
-issue discussions should be centered around the proposed change.
+For proposals, or quick edits create a pull request. If you want to propose a
+new user use case submit an issue.
