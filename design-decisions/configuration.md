@@ -103,4 +103,48 @@ focus on what is different between them.
 
 ### Proposal
 
-None
+For both Cluster Types and Namespace Types an implicit root configuration is
+found at the root folder.
+
+File names should be arbitrary and all files in a directory merged into a single
+configuration "layer".
+
+The first layer should consist of large content differences. Layers following
+the first should be minor changes that consist of the differences. This should
+not be prescriptive in Admiral's interface, but rather, suggested as a "Best
+Practice"
+
+Lists should be not be used because they are difficult to merge.
+
+```
+clusterType/
+|--build/
+|  |--team1/
+|  `--team2/
+`--product/
+   |--dev/
+   `--prod/
+      |--stage/
+      |--beta/
+      `--GA/
+
+namespaceType/
+|--ingress/
+|--services/
+|  |--dev/
+|  `--prod/
+|     |--stage/
+|     |--beta/
+|     `--GA/
+`--build/
+```
+
+Then when configuring a cluster the cluster would reference a ClusterType in the
+format of the folder e.g. `product/prod/stage`. When listing namespaces in a
+cluster NamespaceTypes would be referenced similarly.
+
+ClusterTypes/NamespaceTypes are implicitly infinite. Meaning any reference is
+valid even if there is no configuration for it. For example, in the above file
+structure one could reference a NamespaceType `service/prod/GA/us-east1` even
+though there is no configuration for it. When merging configuration Admiral will
+simply roll up configuration until nothing is found.
