@@ -10,7 +10,8 @@ be useful.
 ## Basic Design
 
 A git repository will house three types of configuration. This configuration
-will be combined to form Kubernetes resources and sent to Kubernetes through the Kubernetes API Server.
+will be combined to form Kubernetes resources and sent to Kubernetes through the
+Kubernetes API Server.
 
 ### Resource Templates
 
@@ -27,11 +28,11 @@ templates into an atomically deployable group. These are like a helm chart
 except templates are referenced in Resource Groups rather than included with
 them.
 
-### Namespace/Cluster Templates
+### Namespace/Cluster Types
 
-Namespace and Cluster templates are layered configuration that acts as a "Bill
-of Materials" for a Namespace and it's namespaced resources or a Cluster and
-it's cluster wide resources. The configuration is "layered" to act as an
-inheritance model. This way many clusters/namespaces can have slight variations
-in Configuration, Bill of Materials, and Release Cadence while keeping
+Namespace and Cluster Type are layered configuration that acts as a "Bill of
+Materials" for a Namespace and it's namespaced resources or a Cluster and it's
+cluster wide resources. The configuration is "layered" to act as an inheritance
+model. This way many clusters/namespaces can have slight variations in
+Configuration, Bill of Materials, and Release Cadence while keeping
 configuration _DRY_.

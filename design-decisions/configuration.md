@@ -87,3 +87,20 @@ letting ResourceGroups define a BOM themselves.
 ### Proposal
 
 None
+
+---
+
+## How should inheritance work?
+
+Inheritance in Namespace/Cluster Types allows managing multiple similar clusters
+focus on what is different between them.
+
+### Important Factors
+
+- Needs to be easily understood
+- Must provide flexibility for minor changes
+- Avoid encouraging configuration that has to eventually be "cleaned up"
+
+### Proposal
+
+None
