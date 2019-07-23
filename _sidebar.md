@@ -1,0 +1,4 @@
+- [Home](/)
+- [Objectives](objectives/)
+- [Design Decisions](design-decisions/)
+  - [Configuration](design-decisions/configuration.md)
