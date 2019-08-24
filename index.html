@@ -10,6 +10,11 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
@@ -18,6 +23,13 @@
     <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-yaml.min.js"></script>
     <script>
+      var num = 0;
+      mermaid.initialize({
+        startOnLoad: false,
+        flowchart: {
+          fontSize: '11px'
+        }
+      });
       window.$docsify = {
         name: 'Kubernetes Admiral',
         repo: 'https://github.com/k8s-admiral/design',
@@ -26,6 +38,20 @@
         plugins: [EditOnGithubPlugin.create('./', './', 'Edit on Github')],
         'flexible-alerts': {
           style: 'flat'
+        },
+        markdown: {
+          renderer: {
+            code: function(code, lang) {
+              if (lang === 'mermaid') {
+                return (
+                  '<div class="mermaid">' +
+                  mermaid.render('mermaid-svg-' + num++, code) +
+                  '</div>'
+                );
+              }
+              return this.origin.code.apply(this, arguments);
+            }
+          }
         }
       };
     </script>

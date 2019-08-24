@@ -1,4 +1,6 @@
 - [Home](/)
 - [Objectives](objectives/)
 - [Design Decisions](design-decisions/)
-  - [Configuration](design-decisions/configuration.md)
+  - [Configuration](design-decisions/configuration)
+- Use Cases
+  - [Single Namespace 1](usecases/single-namespace-1)
