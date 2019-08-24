@@ -1,4 +1,4 @@
-# Comprehensive 1
+# Single Namespace 1
 
 ## Local Environment
 
